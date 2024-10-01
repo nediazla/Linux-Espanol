@@ -145,9 +145,7 @@ La mayoría de los sistemas Linux ofrecen una selección de editores de texto qu
 
 Tanto Vi como Emacs son complejos y tienen una curva de aprendizaje empinada, lo que no es útil para la edición simple de un archivo de texto pequeño. Por lo tanto, **Pico** y **Nano** están disponibles en la mayoría de los sistemas y proporcionan una edición de texto muy básica.
 
-```
-El editor Nano fue desarrollado como un editor de código abierto completamente basado en Pico, ya que la licencia de Pico no es una licencia de código abierto y prohíbe realizar cambios y distribuirlo.
-```
+> El editor Nano fue desarrollado como un editor de código abierto completamente basado en Pico, ya que la licencia de Pico no es una licencia de código abierto y prohíbe realizar cambios y distribuirlo.
 
 Si bien Nano es simple y fácil de usar, no ofrece el amplio conjunto de funciones de edición y encuadernación de teclas más avanzadas que ofrece un editor como Vi. Sin embargo, los administradores deben esforzarse por familiarizarse con Vi, ya que está disponible en casi todos los sistemas Linux existentes. Al restaurar un sistema Linux roto ejecutándolo en el modo de recuperación de la distribución, Vi puede ser una herramienta crítica, y el mejor momento para aprender Vim o cualquier editor es antes de que lo necesite desesperadamente para reparar un sistema roto.
 ## 3.4 Gestión de paquetes
@@ -170,9 +168,7 @@ Al igual que el sistema Debian, los sistemas de gestión de paquetes RPM rastrea
 
 La herramienta de back-end más utilizada para la administración de paquetes RPM es el comando rpm. Mientras que el comando rpm puede instalar, actualizar, consultar y eliminar paquetes, las herramientas front-end de línea de comandos como yum y up2date automatizan el proceso de resolución de problemas de dependencia.
 
-```
-Un programa o aplicación back-end interactúa directamente con un programa front-end o es "llamado" por un programa intermedio. Los programas back-end no interactuarían directamente con el usuario. Básicamente, hay programas que interactúan con las personas (front-end) y programas que interactúan con otros programas (back-end).
-```
+> Un programa o aplicación back-end interactúa directamente con un programa front-end o es "llamado" por un programa intermedio. Los programas back-end no interactuarían directamente con el usuario. Básicamente, hay programas que interactúan con las personas (front-end) y programas que interactúan con otros programas (back-end).
 
 También hay herramientas front-end basadas en GUI como **Yumex** y **Gnome PackageKit** que también facilitan la gestión de paquetes RPM.
 
@@ -201,9 +197,7 @@ Los lenguajes interpretados, por otro lado, se traducen a código de máquina a 
 
 **JavaScript** es un lenguaje de programación interpretado de alto nivel que es una de las tecnologías principales de la World Wide Web. Es similar pero fundamentalmente diferente de Java, que es un lenguaje de programación completamente orientado a objetos propiedad de Oracle. JavaScript es un lenguaje de scripting multiplataforma para agregar elementos interactivos a páginas web, que se usa ampliamente en Internet. Mediante el uso de bibliotecas de JavaScript, los programadores web pueden agregar de todo, desde animaciones simples hasta aplicaciones complejas del lado del servidor para usuarios de Internet. JavaScript está en continua evolución para satisfacer las necesidades de funcionalidad y seguridad de los usuarios de Internet y es capaz de ser publicado bajo una licencia GNU GPL.
 
-```
-El término _orientado a objetos_ se refiere a la programación que abstrae acciones y procesos complejos para que el usuario final solo se ocupe de las tareas básicas. Para visualizar este concepto, piense en una máquina que realiza un conjunto complejo de tareas con solo presionar un botón.
-```
+> El término _orientado a objetos_ se refiere a la programación que abstrae acciones y procesos complejos para que el usuario final solo se ocupe de las tareas básicas. Para visualizar este concepto, piense en una máquina que realiza un conjunto complejo de tareas con solo presionar un botón.
 
 **Perl** es un lenguaje interpretado. Perl fue desarrollado originalmente para realizar manipulación de texto. A lo largo de los años, se ganó el favor de los administradores de sistemas y continúa mejorándose y utilizándose en todo, desde la automatización hasta la creación de aplicaciones web.
 

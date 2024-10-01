@@ -25,9 +25,7 @@ Desde este humilde comienzo, Linux se ha convertido en el sistema operativo domi
 
 Antes y junto a este desarrollo se encontraba el **Proyecto GNU**, creado por **Richard Stallman** en 1983. Aunque GNU se centró inicialmente en la construcción de su propio sistema operativo, al final fueron mucho más eficaces en la creación de herramientas que van junto con un sistema operativo similar a UNIX, como los editores, compiladores e interfaces de usuario que hacen que un núcleo sea utilizable. Dado que el código fuente estaba disponible libremente, los programadores de Linux pudieron incorporar las herramientas GNU para proporcionar un sistema operativo completo. Como tal, muchas de las herramientas y utilidades que forman parte del sistema Linux evolucionaron a partir de estas primeras herramientas GNU.
 
-```
-Linus originalmente llamó al proyecto Freax, sin embargo, un administrador del servidor donde se cargaron los archivos de desarrollo lo renombró Linux, un acrónimo del nombre de Linus y UNIX. El nombre se quedó.
-```
+>Linus originalmente llamó al proyecto Freax, sin embargo, un administrador del servidor donde se cargaron los archivos de desarrollo lo renombró Linux, un acrónimo del nombre de Linus y UNIX. El nombre se quedó.
 
 GNU es un acrónimo recursivo de "GNU's Not Unix", y se pronuncia igual que el antílope africano que lleva su nombre.
 ## 1.3 Linux es de código abierto
@@ -38,9 +36,8 @@ El desarrollo de Linux es muy similar al auge del _software de código abierto_.
 
 Linux adoptó esta filosofía con gran éxito. Linus hizo que el código fuente de programación (las instrucciones que usa una computadora para operar) estuviera disponible libremente, lo que permitió que otros se unieran y dieran forma a este incipiente sistema operativo. No fue el primer sistema desarrollado por un grupo de voluntarios, pero dado que se construyó desde cero, los primeros usuarios pudieron influir en la dirección del proyecto. Las personas tomaron el código fuente, hicieron cambios y los compartieron con el resto del grupo, lo que aceleró enormemente el ritmo de desarrollo y garantizó que no se repitieran los errores de otros sistemas operativos.
 
-```
-El código fuente puede estar escrito en cualquiera de los cientos de idiomas diferentes. Linux está escrito en **C**, un lenguaje versátil y relativamente fácil de aprender, que comparte historia con el UNIX original. Esta decisión, tomada mucho antes de que se demostrara su utilidad, resultó ser crucial en su adopción casi universal como el principal sistema operativo para los servidores de Internet.
-```
+>El código fuente puede estar escrito en cualquiera de los cientos de idiomas diferentes. Linux está escrito en **C**, un lenguaje versátil y relativamente fácil de aprender, que comparte historia con el UNIX original. Esta decisión, tomada mucho antes de que se demostrara su utilidad, resultó ser crucial en su adopción casi universal como el principal sistema operativo para los servidores de Internet.
+
 ## 1.4 Linux tiene distribuciones
 
 Las personas que dicen que su computadora ejecuta Linux generalmente se refieren al kernel, las herramientas y el conjunto de aplicaciones que vienen agrupadas en lo que se conoce como una _distribución_.

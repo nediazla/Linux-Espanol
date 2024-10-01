@@ -30,9 +30,7 @@ También es necesario determinar la vida útil del servicio y la tolerancia al r
 
 En un entorno de servidor empresarial, los ciclos de mantenimiento y versión son consideraciones críticas porque requiere mucho tiempo y es costoso realizar actualizaciones importantes. En cambio, el hardware del servidor en sí a menudo se reemplaza porque el aumento del rendimiento vale la pena el gasto adicional, y los recursos involucrados suelen ser muchas veces más costosos que el hardware.
 
-```
-Hay una buena cantidad de trabajo involucrado en la actualización de un servidor debido a las configuraciones especializadas, la aplicación de parches de software y las pruebas de usuario, por lo que una organización proactiva buscará maximizar su retorno de la inversión tanto en capital humano como monetario.
-```
+> Hay una buena cantidad de trabajo involucrado en la actualización de un servidor debido a las configuraciones especializadas, la aplicación de parches de software y las pruebas de usuario, por lo que una organización proactiva buscará maximizar su retorno de la inversión tanto en capital humano como monetario.
 
 Los centros de datos modernos están abordando este desafío a través de _la virtualización_. En un entorno virtual, una máquina física puede alojar docenas, o incluso cientos de máquinas virtuales, lo que reduce los requisitos de espacio y energía, además de permitir la automatización de muchas de las tareas que antes realizaban manualmente los administradores de sistemas. Los programas de scripting permiten crear, configurar, implementar y eliminar máquinas virtuales de una red sin necesidad de intervención humana. Por supuesto, un humano todavía necesita escribir el guión y monitorear estos sistemas, al menos por ahora.
 
@@ -107,11 +105,9 @@ Otras versiones dependen de distribuciones beta. Por ejemplo, la distribución d
 
 openSUSE y su homólogo empresarial SLES (SUSE Linux Enterprise Server) son similares, en el sentido de que la edición comunitaria se utiliza como campo de pruebas para las características y funciones que eventualmente se migrarán a la versión empresarial. Las versiones posteriores de las bases de código de distribución de openSUSE y SLES son casi idénticas, lo que permite una migración más fácil de las características y el código de una a otra.
 
-```
-La distribución Debian advierte a los usuarios sobre los peligros de usar la versión «sid» (inestable) con la siguiente advertencia:
+> La distribución Debian advierte a los usuarios sobre los peligros de usar la versión «sid» (inestable) con la siguiente advertencia:
 
-"_SID" está sujeto a cambios masivos y actualizaciones de la biblioteca en el lugar. Esto puede resultar en un sistema muy "inestable" que contiene paquetes que no se pueden instalar debido a bibliotecas faltantes, dependencias que no se pueden cumplir, etc. ¡Úsalo bajo tu propio riesgo!_'
-```
+> "_SID" está sujeto a cambios masivos y actualizaciones de la biblioteca en el lugar. Esto puede resultar en un sistema muy "inestable" que contiene paquetes que no se pueden instalar debido a bibliotecas faltantes, dependencias que no se pueden cumplir, etc. ¡Úsalo bajo tu propio riesgo!_'
 
 **Costar**
 Es posible que la distribución de Linux elegida no tenga costo, pero puede valer la pena pagar por el soporte en función de las necesidades y capacidades de la organización.

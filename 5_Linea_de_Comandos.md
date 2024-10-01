@@ -51,10 +51,8 @@ sysadmin@localhost:~$ ls
 Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 ```
 
-```
-Por sí solo, el comando ls enumera los archivos y directorios contenidos en el directorio de trabajo actual. En este punto, no debes preocuparte demasiado por la salida del comando, sino que debes centrarte en comprender cómo formatear y ejecutar los comandos.
-El comando ls se tratará con todo detalle más adelante en el curso.
-```
+> Por sí solo, el comando ls enumera los archivos y directorios contenidos en el directorio de trabajo actual. En este punto, no debes preocuparte demasiado por la salida del comando, sino que debes centrarte en comprender cómo formatear y ejecutar los comandos.
+> El comando ls se tratará con todo detalle más adelante en el curso.
 
 Muchos comandos se pueden usar por sí mismos sin ninguna otra entrada. Algunos comandos requieren una entrada adicional para ejecutarse correctamente. Esta entrada adicional se presenta en dos formas: _opciones_ y _argumentos_.
 
@@ -66,9 +64,7 @@ command [options] [arguments]
 
 Las opciones se utilizan para modificar el comportamiento principal de un comando, mientras que los argumentos se utilizan para proporcionar información adicional (como un nombre de archivo o un nombre de usuario). Cada opción y argumento normalmente está separado por un espacio, aunque las opciones a menudo se pueden combinar.
 
-```
-Tenga en cuenta que Linux distingue entre mayúsculas y minúsculas. Los comandos, opciones, argumentos, variables y nombres de archivo deben introducirse exactamente como se muestran.
-```
+> Tenga en cuenta que Linux distingue entre mayúsculas y minúsculas. Los comandos, opciones, argumentos, variables y nombres de archivo deben introducirse exactamente como se muestran.
 
 ### 5.3.1 Argumentos
 
@@ -116,9 +112,7 @@ drwxr-xr-x 1 sysadmin sysadmin 0 Jan 29  20:13 Templates
 drwxr-xr-x 1 sysadmin sysadmin 0 Jan 29  20:13 Videos  
 ```
 
-```
-Tenga en cuenta que, en el comando anterior, -l es una letra "L" minúscula. Una manera fácil de recordar esto es -l es un mnemotécnico (código de programación fácil de memorizar) para **_listas largas_**).
-```
+> Tenga en cuenta que, en el comando anterior, -l es una letra "L" minúscula. Una manera fácil de recordar esto es -l es un mnemotécnico (código de programación fácil de memorizar) para **_listas largas_**).
 
 A menudo, el carácter se elige para que sea mnemotécnico para su propósito, como elegir la letra _l_ para _largo_ o _r_ para _invertido_. De forma predeterminada, el comando ls imprime los resultados en orden alfabético y, por lo tanto, al agregar la opción -r, imprime los resultados en orden alfabético inverso.
 
@@ -371,13 +365,10 @@ Cada directorio de la lista está separado por dos puntos : carácter. En funci�
 /usr/games
 ```
 
-```
-Cada uno de estos directorios está representado por una ruta de acceso. Una ruta es una lista de directorios separados por el carácter /. Si piensa en el sistema de archivos como un mapa, las rutas son las direcciones de directorio, que incluyen instrucciones de navegación paso a paso; Se pueden utilizar para indicar la ubicación de cualquier archivo dentro del sistema de archivos. Por ejemplo, /home/sysadmin es una ruta al directorio de inicio:
-```
-![](img/20241001165712.png)
-```
-Los directorios y las rutas se tratarán en detalle más adelante en el curso.
-```
+
+> Cada uno de estos directorios está representado por una ruta de acceso. Una ruta es una lista de directorios separados por el carácter /. Si piensa en el sistema de archivos como un mapa, las rutas son las direcciones de directorio, que incluyen instrucciones de navegación paso a paso; Se pueden utilizar para indicar la ubicación de cualquier archivo dentro del sistema de archivos. Por ejemplo, /home/sysadmin es una ruta al directorio de inicio:
+> ![](img/20241001165712.png)
+> Los directorios y las rutas se tratarán en detalle más adelante en el curso.
 
 Si el comando no se encuentra en ningún directorio enumerado en la variable PATH, entonces el shell devuelve un error:
 
@@ -394,12 +385,10 @@ sysadmin@localhost:~$ PATH=/usr/bin/custom:$PATH
 sysadmin@localhost:~$ echo $PATH                                       
 /usr/bin/custom:/home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games                                              sysadmin@localhost:~$ PATH=/usr/bin/custom:$PATH                        
 sysadmin@localhost:~$ echo $PATH                                       
-/usr/bin/custom:/home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games                                              
+/usr/bin/custom:/home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games   
 ```
 
-```
 Al actualizar la variable PATH, incluya siempre la ruta actual, para no perder el acceso a los comandos ubicados en esos directorios. Esto se puede lograr anexando $PATH al valor de la expresión de asignación. Recuerde que un nombre de variable precedido por un signo de dólar representa el valor de la variable.
-```
 ## 5.5 Tipos de comandos
 Una forma de obtener más información sobre un comando es observar de dónde proviene. El comando type se puede utilizar para determinar información sobre el tipo de comando.
 
@@ -410,6 +399,7 @@ type command
 Hay varias fuentes diferentes de comandos dentro del shell de su CLI, incluidos comandos internos, comandos externos, alias y funciones.
 ### 5.5.1 Comandos internos
 También llamados comandos integrados, los comandos internos están integrados en el propio shell. Un buen ejemplo es el comando cd (change directory) ya que forma parte del shell de Bash. Cuando un usuario escribe el comando cd, el shell Bash ya se está ejecutando y sabe cómo interpretarlo, sin necesidad de iniciar programas adicionales.
+
 El comando type identifica el comando cd como un comando interno:
 
 ```
@@ -558,10 +548,8 @@ Las comillas se utilizan en toda la administración de Linux y en la mayoría de
 ### 5.6.1 Comillas dobles
 Las comillas dobles detienen el shell de interpretar algunos metacaracteres (caracteres especiales), incluidos los caracteres glob.
 
-```
-Los caracteres glob, también llamados comodines, son símbolos que tienen un significado especial para el shell; son interpretados por el propio shell antes de que intente ejecutar cualquier comando. Los caracteres glob incluyen el carácter de asterisco *, la pregunta ? marca, y los corchetes [ ], entre otros.
-El globbing se tratará con mayor detalle más adelante en el curso.
-```
+>Los caracteres glob, también llamados comodines, son símbolos que tienen un significado especial para el shell; son interpretados por el propio shell antes de que intente ejecutar cualquier comando. Los caracteres glob incluyen el carácter de asterisco *, la pregunta ? marca, y los corchetes [ ], entre otros.
+> El globbing se tratará con mayor detalle más adelante en el curso.
 
 Dentro de las comillas dobles, un asterisco es solo un asterisco, un signo de interrogación es solo un signo de interrogación, y así sucesivamente, lo cual es útil cuando desea mostrar algo en la pantalla que normalmente es un carácter especial para el shell. En el comando echo a continuación, el shell Bash no convierte el patrón glob en nombres de archivo que coincidan con el patrón:
 
