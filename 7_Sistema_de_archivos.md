@@ -23,10 +23,10 @@ La siguiente imagen muestra una representación visual de un sistema de archivos
 Para ver el contenido del directorio raíz, utilice el comando ls con el carácter / como argumento:
 
 ```
-**sysadmin@localhost:~$** ls /                                            
- bin    etc    lib     mnt    root  'sbin'$'\342\200\214'   `tmp`                 
- boot   home   lib64   opt    run    srv                    usr               
- devinit   media   proc   sbin   sys                    var
+sysadmin@localhost:~$ ls /                                            
+ bin    etc    lib     mnt    root  'sbin'$'\342\200\214'   tmp                 
+ boot   home   lib64   opt    run    srv                    usr                 
+ dev    init   media   proc   sbin   sys                    var 
 ```
 
 Tenga en cuenta que hay muchos directorios con nombres descriptivos, incluido /boot, que contiene archivos para arrancar la computadora.
@@ -57,7 +57,7 @@ pwd [OPTIONS]
 ```
 
 ```
-**sysadmin@localhost:~$** pwd
+sysadmin@localhost:~$ pwd
 /home/sysadmin
 ```
 
