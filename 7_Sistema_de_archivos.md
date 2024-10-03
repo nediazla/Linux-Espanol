@@ -273,6 +273,7 @@ drwxr-xr-x 2 root   root   4096 Jul 19 06:51 journal
 En el resultado anterior, cada línea muestra metadatos sobre un solo archivo. A continuación se describe cada uno de los campos de datos de la salida del comando ls -l:
 
 **Tipo de archivo**
+
 ![](img/20241003110843.png)
 
 El primer carácter de cada línea indica el tipo de archivo. Los tipos de archivo son:
@@ -290,45 +291,53 @@ El primer carácter de cada línea indica el tipo de archivo. Los tipos de archi
 El primer archivo alternatives.log es un archivo normal (-), mientras que el segundo archivo apt es un directorio (d).
 
 **Permisos**
+
 ![](img/20241003111309.png)
 
 Los siguientes nueve caracteres muestran los permisos del archivo. Los permisos indican cómo determinados usuarios pueden acceder a un archivo.
 Los permisos se tratarán en detalle más adelante en el curso.
 
 **Recuento de enlaces duros**
+
 ![](img/20241003111349.png)
 
 Este número indica cuántos enlaces físicos apuntan a este archivo.
 Los enlaces se tratarán en detalle más adelante en el curso.
 
 **Usuario propietario**
+
 ![](img/20241003111413.png)
 
 Cada archivo es propiedad de una cuenta de usuario. Esto es importante porque el propietario tiene los derechos para establecer permisos en un archivo.
 La propiedad de los archivos se tratará en detalle más adelante en el curso.
 
 **Propietario del grupo**
+
 ![](img/20241003111437.png)
 
 Indica a qué grupo pertenece este archivo. Esto es importante porque cualquier miembro de este grupo tiene un conjunto de permisos en el archivo.
 La propiedad de los archivos se tratará en detalle más adelante en el curso.
 
 **Tamaño del archivo**
+
 ![](img/20241003111518.png)
 
 Muestra el tamaño del archivo en bytes.
 En el caso de los directorios, este valor no describe el tamaño total del directorio, sino el número de bytes reservados para realizar un seguimiento de los nombres de archivo del directorio. En otras palabras, ignore este campo para los directorios.
 
 **Timestamp**
+
 ![](img/20241003111532.png)
 
 Indica la hora a la que se modificó por última vez el contenido del archivo. En el caso de los directorios, esta marca de tiempo indica la última vez que se agregó o eliminó un archivo del directorio.
 
 **Nombre de archivo**
+
 ![](img/20241003111549.png)
 
 El campo final contiene el nombre del archivo o directorio.
 En el caso de enlaces simbólicos, el nombre del enlace se muestra junto con una flecha y el nombre de la ruta del archivo original.
+
 ![](img/20241003111607.png)
 
 Los enlaces simbólicos se tratarán en detalle más adelante en el curso.
