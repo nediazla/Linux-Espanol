@@ -22,7 +22,7 @@ La siguiente imagen muestra una representación visual de un sistema de archivos
 
 Para ver el contenido del directorio raíz, utilice el comando ls con el carácter / como argumento:
 
-```
+```shell
 sysadmin@localhost:~$ ls /                                            
  bin    etc    lib     mnt    root  'sbin'$'\342\200\214'   tmp                 
  boot   home   lib64   opt    run    srv                    usr                 
@@ -52,11 +52,11 @@ También es posible hacer referencia al directorio de inicio de otro usuario uti
 
 Para determinar dónde se encuentra actualmente el usuario dentro del sistema de archivos, se puede utilizar el comando pwd (directorio de trabajo de impresión):
 
-```
+```shell
 pwd [OPTIONS]
 ```
 
-```
+```shell
 sysadmin@localhost:~$ pwd
 /home/sysadmin
 ```
@@ -71,13 +71,13 @@ Cuando un usuario abre un shell, normalmente comienza en su directorio de inicio
 
 Para navegar por el sistema de archivos, utilice el comando cd (cambiar directorio).
 
-```
+```shell
 cd [options] [path]
 ```
 
 Hay un directorio llamado Documentos ubicado en el directorio de inicio del usuario administrador del sistema. Para pasar del directorio de inicio al directorio de documentos, utilice el nombre del directorio como argumento para el comando cd:
 
-```
+```shell
 sysadmin@localhost:~$ cd Documents
 sysadmin@localhost:~/Documents$
 ```
@@ -86,27 +86,27 @@ sysadmin@localhost:~/Documents$
 
 Cuando se usa sin argumentos, el comando cd llevará al usuario a su directorio de inicio.
 
-```
+```shell
 sysadmin@localhost:~/Documents$ cd
 sysadmin@localhost:~$
 ```
 
 Observe que nuestras máquinas virtuales emplean un mensaje que muestra el directorio de trabajo actual, resaltado con el color azul. En el primer mensaje, el carácter de tilde ~ es equivalente a /home/sysadmin, que representa el directorio de inicio del usuario.
 
-```
+```shell
 sysadmin@localhost:~$
 ```
 
 Después de cambiar de directorio, la nueva ubicación ~/Documents también se puede confirmar en el nuevo mensaje, que se muestra nuevamente en azul.
 
-```
+```shell
 sysadmin@localhost:~$ cd Documents
 sysadmin@localhost:~/Documents$
 ```
 
 > Para algunos comandos, la ausencia de noticias es una buena noticia; No hay salida si el comando cd se realiza correctamente. Si el usuario intenta cambiar a un directorio que no existe, el comando devuelve un mensaje de error:
 
-```
+```shell
 sysadmin@localhost:~$ cd Junk
 -bash: cd: Junk: No such file or directory
 ```
@@ -121,13 +121,13 @@ _Las rutas absolutas_ permiten al usuario especificar la ubicación exacta de un
 
 Si la ruta /home/sysadmin se utiliza como argumento para el comando cd, mueve al usuario al directorio de inicio para el usuario sysadmin.
 
-```
+```shell
 sysadmin@localhost:~/Documents$ cd /home/sysadmin
 ```
 
 De nuevo, si no hay salida, significa que el comando se ha realizado correctamente. Esto se puede confirmar mirando el símbolo del sistema o usando el comando pwd:
 
-```
+```shell
 sysadmin@localhost:~$ pwd
 /home/sysadmin
 ```
@@ -136,7 +136,7 @@ _Las rutas relativas_ comienzan desde el directorio actual. Una ruta relativa pr
 
 Eche otro vistazo al primer ejemplo de comando cd. El argumento es un ejemplo de la ruta relativa más simple: el nombre de un directorio dentro del directorio de trabajo actual.
 
-```
+```shell
 sysadmin@localhost:~$ cd Documents
 sysadmin@localhost:~/Documents$ 
 ```
@@ -146,14 +146,14 @@ Si el usuario se encuentra en el directorio Documentos, el desplazamiento al dir
 ![](img/20241003105618.png)
 Se puede utilizar la ruta absoluta al directorio de arte:
 
-```
+```shell
 sysadmin@localhost:~/Documents$ cd /home/sysadmin/Documents/School/Art
 sysadmin@localhost:~/Documents/School/Art$ 
 ```
 
 Se pueden utilizar varias rutas relativas:
 
-```
+```shell
 sysadmin@localhost:~/Documents$ cd School
 sysadmin@localhost:~/Documents/School$ cd Art
 sysadmin@localhost:~/Documents/School/Art$ 
@@ -161,7 +161,7 @@ sysadmin@localhost:~/Documents/School/Art$
 
 Sin embargo, el método más sencillo es utilizar una única ruta relativa que cubra el recorrido desde el directorio de origen hasta el de destino:
 
-```
+```shell
 sysadmin@localhost:~/Documents$ cd School/Art
 sysadmin@localhost:~/Documents/School/Art$ 
 ```
@@ -170,16 +170,15 @@ sysadmin@localhost:~/Documents/School/Art$
 
 Utilice el comando pwd para confirmar el cambio:
 
-```
+```shell
 sysadmin@localhost:~/Documents/School/Art$ pwd
 /home/sysadmin/Documents/School/Art
 ```
-
 ### 7.3.3 Atajos
 ### El.. Caracteres
 Independientemente del directorio en el que se encuentre el usuario, dos caracteres de punto .. siempre representan un directorio más alto en relación con el directorio actual, a veces denominado directorio principal. Para pasar del directorio de arte al directorio de la escuela:
 
-```
+```shell
 sysadmin@localhost:~/Documents/School/Art$ cd ..
 sysadmin@localhost:~/Documents/School$ 
 ```
@@ -188,7 +187,7 @@ El punto doble también se puede usar en rutas más largas. La siguiente ruta re
 
 ![](img/20241003110024.png)
 
-```
+```shell
 sysadmin@localhost:~/Documents/School$ cd ../../Downloads
 sysadmin@localhost:~/Downloads$
 ```
@@ -197,20 +196,20 @@ Independientemente del directorio en el que se encuentre el usuario, el punto ú
 ## 7.4 Listado de archivos en un directorio
 Para los ejemplos anteriores, se proporcionaron imágenes para mostrar el diseño del sistema de archivos. En la práctica, no se proporcionan mapas como estos, y los usuarios deben confiar en lo que está disponible en la línea de comandos, lo que hace que el comando ls (lista) sea uno de los más poderosos para navegar por el sistema de archivos.
 
-```
+```shell
 ls [OPTION]... [FILE]...
 ```
 
 Este comando ls se utiliza para mostrar el contenido de un directorio y puede proporcionar información detallada sobre los archivos. De forma predeterminada, cuando se usa sin opciones ni argumentos, enumera los archivos en el directorio actual:
 
-```
+```shell
 sysadmin@localhost:~$ ls                                               
 Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 ```
 
 El comando ls también se puede utilizar para enumerar el contenido de cualquier directorio en el sistema de archivos. Proporcione la ruta al directorio como argumento:
 
-```
+```shell
 sysadmin@localhost:~$ ls /var                                                   
 backups  cache  lib  local  lock  log  mail  opt  run  spool  tmp 
 ```
@@ -219,26 +218,25 @@ backups  cache  lib  local  lock  log  mail  opt  run  spool  tmp
 ‌⁠
 La salida coloreada no es el comportamiento predeterminado para el comando ls, sino más bien el efecto de la opción --color. El ls parece realizar este coloreado automáticamente porque hay un alias para el comando ls, por lo que se ejecuta con la opción --color.
 
-```
+```shell
 sysadmin@localhost:~$ type ls
 ls is aliased to `ls --color=auto'
 ```
 
 Para evitar el uso del alias, coloque un carácter de barra invertida \ delante de su comando:
 
-```
+```shell
 sysadmin@localhost:~$ ls
 Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos 
 sysadmin@localhost:~$ \ls
 Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 ```
-
 ### 7.4.1 Listado de archivos ocultos
 Cuando se utiliza el comando ls para mostrar el contenido de un directorio, no todos los archivos se muestran automáticamente. El comando ls omite los archivos ocultos de forma predeterminada. Un archivo oculto es cualquier archivo (o directorio) que comienza con un punto . carácter.
 
 Para mostrar todos los archivos, incluidos los archivos ocultos, utilice la opción -a del comando ls:
 
-```
+```shell
 sysadmin@localhost:~$ ls -a                                            
 .             .bashrc   .selected_editor  Downloads  Public           
 ..            .cache    Desktop           Music      Templates         
@@ -251,7 +249,7 @@ Estos archivos de personalización no son los que se utilizan de forma habitual,
 ### 7.4.2 Listado de pantalla larga
 Cada archivo tiene detalles asociados llamados metadatos. Esto puede incluir información como el tamaño, la propiedad o las marcas de tiempo. Para ver esta información, utilice la opción -l del comando ls. A continuación, se utiliza como ejemplo una lista del directorio /var/log, ya que proporciona una variedad de salidas:
 
-```
+```shell
 sysadmin@localhost:~$ ls -l /var/log/
 total 900                                                                       
 -rw-r--r-- 1 root   root  15322 Dec 10 21:33 alternatives.log
@@ -344,7 +342,7 @@ Los enlaces simbólicos se tratarán en detalle más adelante en el curso.
 ### 7.4.3 Tamaños legibles por humanos
 La opción -l del comando ls muestra los tamaños de archivo en bytes. En el caso de los archivos de texto, un byte es 1 carácter. Para archivos más pequeños, los tamaños de bytes están bien. Sin embargo, para archivos más grandes, es difícil comprender qué tan grande es el archivo. Por ejemplo, considere la salida del siguiente comando:
 
-```
+```shell
 ysadmin@localhost:~$ ls -l /var/log/lastlog           
 -rw-rw-r-- 1 root utmp 292584 Dec 15 16:38 /var/log/lastlog
 ```
@@ -355,7 +353,7 @@ Piénsalo de esta manera: si alguien diera la distancia entre Boston y Nueva Yor
 
 A veces es preferible presentar el tamaño del archivo en un tamaño más legible para el ser humano, como megabytes o gigabytes. Para lograr esto, agregue la opción -h al comando ls:
 
-```
+```shell
 sysadmin@localhost:~$ ls -lh /var/log/lastlog             
 -rw-rw-r-- 1 root utmp 286K Dec 15 16:38 /var/log/lastlog
 ```
@@ -363,14 +361,14 @@ sysadmin@localhost:~$ ls -lh /var/log/lastlog
 ### 7.4.4 Directorios de listados
 Cuando se utiliza la opción -d, se refiere al directorio actual y no al contenido que contiene. Sin ninguna otra opción, es bastante insignificante. Recuerde que siempre se hace referencia al directorio actual con un solo punto . carácter:
 
-```
+```shell
 sysadmin@localhost:~$ ls -d   
 .  
 ```
 
 Para usar la opción -d de una manera significativa se requiere la adición de la opción -l. En este caso, tenga en cuenta que el siguiente comando enumera los detalles del contenido en el directorio /home/sysadmin:
 
-```
+```shell
 sysadmin@localhost:~$ ls -l        
 total 32                       
 drwxr-xr-x 2 sysadmin sysadmin 4096 Dec 10 21:33 Desktop
@@ -385,7 +383,7 @@ drwxr-xr-x 2 sysadmin sysadmin 4096 Dec 10 21:33 Videos
 
 En comparación, el siguiente comando enumera el directorio /home/sysadmin:
 
-```
+```shell
 sysadmin@localhost:~$ ls -ld         
 drwxr-xr-x 1 sysadmin sysadmin 224 Nov  7 17:07 .
 ```
@@ -396,7 +394,7 @@ Hay ocasiones en las que desea mostrar todos los archivos de un directorio, así
 
 Para realizar una lista recursiva, utilice la opción -R para el comando ls:
 
-```
+```shell
 sysadmin@localhost:~$ ls -R /etc/ppp
 /etc/ppp:
 ip-down.d  ip-up.d         
@@ -416,14 +414,14 @@ De forma predeterminada, el comando ls ordena los archivos alfabéticamente por 
 
 Para ordenar los archivos por tamaño, podemos usar la opción -S. Tenga en cuenta la diferencia en la salida de los dos comandos siguientes. Se enumeran los mismos archivos y directorios, pero en un orden diferente:
 
-```
+```shell
 sysadmin@localhost:~$ ls /etc/ssh
 moduli              ssh_host_ecdsa_key.pub    ssh_host_rsa_key      sshd_config
 ssh_config          ssh_host_ed25519_key      ssh_host_rsa_key.pub
 ssh_host_ecdsa_key  ssh_host_ed25519_key.pub  ssh_import_id
 ```
 
-```
+```shell
 sysadmin@localhost:~$ ls -S /etc/ssh
 moduli            ssh_host_ed25519_key  ssh_host_ecdsa_key.pub
 sshd_config       ssh_host_rsa_key.pub  ssh_host_ed25519_key.pub
@@ -435,7 +433,7 @@ ssh_config        ssh_host_ecdsa_key
 
 Si bien la opción -S funciona por sí sola, es más útil cuando se usa con la opción -l para que los tamaños de los archivos sean visibles. El siguiente comando enumera los archivos de mayor a menor y muestra el tamaño real del archivo.
 
-```
+```shell
 sysadmin@localhost:~$ ls -lS /etc/ssh
 total 580
 -rw-r--r-- 1 root root 553122 Feb 10  2018 moduli
@@ -452,7 +450,7 @@ total 580
 
 También puede ser útil usar la opción -h para mostrar tamaños de archivo legibles por humanos:
 
-```
+```shell
 sysadmin@localhost:~$ ls -lSh /etc/ssh                          
 total 580K                                   
 -rw-r--r-- 1 root root 541K Feb 10  2018 moduli
@@ -469,7 +467,7 @@ total 580K
 
 La opción -t ordena los archivos en función de la hora en que se modificaron. Primero enumerará los archivos modificados más recientemente. Esta opción se puede usar sola, pero de nuevo, suele ser más útil cuando se combina con la opción -l:
 
-```
+```shell
 sysadmin@localhost:~$ ls -tl /etc/ssh        
 total 580
 -rw------- 1 root root    227 Jul 19 06:52 ssh_host_ecdsa_key
@@ -488,7 +486,7 @@ total 580
 
 Si los archivos de un directorio se modificaron hace muchos días o meses, puede ser más difícil saber exactamente cuándo se modificaron, ya que solo se proporciona la fecha para los archivos más antiguos. Para obtener información más detallada sobre la hora de modificación, puede utilizar la opción --full-time para mostrar la marca de tiempo completa (incluidas horas, minutos y segundos). Asumirá la opción -l automáticamente:
 
-```
+```shell
 sysadmin@localhost:~$ ls -t --full-time /etc/ssh
 total 580
 -rw------- 1 root root    227 2018-07-19 06:52:16.000000000 +0000 ssh_host_ecdsa_key
@@ -505,7 +503,7 @@ total 580
 
 Es posible realizar una ordenación inversa utilizando la opción -r. Se puede usar solo o combinado con las opciones -S o -t. El siguiente comando ordenará los archivos por tamaño, de menor a mayor:
 
-```
+```shell
 sysadmin@localhost:~$ ls -lrS /etc/ssh
 total 580
 -rw-r--r-- 1 root root     99 Jul 19 06:52 ssh_host_ed25519_key.pub
@@ -522,7 +520,7 @@ total 580
 
 El siguiente comando enumerará los archivos por fecha de modificación, del más antiguo al más reciente:
 
-```
+```shell
 sysadmin@localhost:~$ ls -lrt /etc/ssh       
 total 580
 -rw-r--r-- 1 root root   3264 Feb 10  2018 sshd_config

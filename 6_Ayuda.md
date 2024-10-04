@@ -8,19 +8,19 @@ Las páginas del manual se utilizan para describir las características de los c
 ### 6.2.1 Visualización de páginas de manual
 Para ver una página de comando man para un comando, use el comando man:
 
-```
+```shell
 man command
 ```
 
 Por ejemplo, a continuación se muestra la página del comando man para el comando ls:
 
-```
+```shell
 sysadmin@localhost:~$ man ls
 ```
 
 Navegue por el documento con las teclas de flecha:
 
-```
+```shell
 LS(1)                            User Commands                           LS(1)  
                                                                                 
 NAME                                                                            
@@ -55,7 +55,7 @@ A continuación se describen algunas de las secciones más comunes que se encuen
 
 Proporciona el nombre del comando y una descripción muy breve.
 
-```
+```shell
 NAME                                                                            
        ls - list directory contents   
 ```
@@ -64,14 +64,14 @@ NAME
 
 Proporciona ejemplos de cómo se ejecuta el comando.
 
-```
+```shell
 SYNOPSIS                                                                        
        ls [OPTION]... [FILE]...   
 ```
 
 La sección SINOPSIS de una página del manual puede ser difícil de entender, pero es muy importante porque proporciona un ejemplo conciso de cómo usar el comando. Por ejemplo, considere la SINOPSIS de la página del manual para el comando cal:
 
-```
+```shell
 SYNOPSIS 
      cal [-31jy] [-A number] [-B number] [-d yyyy-mm] [[month] year] 
 ```
@@ -82,7 +82,7 @@ El último conjunto de corchetes [[mes] año] muestra otra característica; Sign
 
 Otro componente de la SINOPSIS que puede causar cierta confusión se puede ver en la página del manual del comando date:
 
-```
+```shell
 SYNOPSIS                                                              
        date [OPTION]... [+FORMAT]                                      
        date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
@@ -98,7 +98,7 @@ Además, la notación [-u|--utc|--universal] significa que se puede usar la opci
 
 Proporciona una descripción más detallada del comando.
 
-```
+```shell
 DESCRIPTION  
        List  information  about  the FILEs (the current directory by default).  
        Sort entries alphabetically if none of -cftuvSUX nor --sort  is  speci-  
@@ -109,7 +109,7 @@ DESCRIPTION
 
 Enumera las opciones del comando, así como una descripción de cómo se utilizan. A menudo, esta información se encuentra en la sección DESCRIPCIÓN y no en una sección separada de OPCIONES.
 
-```
+```shell
        -a, --all                                                                
               do not ignore entries starting with .  
  
@@ -135,7 +135,7 @@ Enumera los archivos asociados al comando, así como una descripción de cómo s
 
 Proporciona el nombre de la persona que creó la página del comando man y (a veces) cómo ponerse en contacto con la persona.
 
-```
+```shell
 AUTHOR                                                                          
        Written by Richard M. Stallman and David MacKenzie.
 ```
@@ -144,7 +144,7 @@ AUTHOR
 
 Proporciona detalles sobre cómo notificar problemas con el comando.
 
-```
+```shell
 REPORTING BUGS                                                                  
        GNU coreutils online help: <http://www.gnu.org/software/coreutils/>      
        Report ls translation bugs to <http://translationproject.org/team/>
@@ -154,7 +154,7 @@ REPORTING BUGS
 
 Proporciona información básica sobre derechos de autor.
 
-```
+```shell
 COPYRIGHT                                                                       
        Copyright (C) 2017 Free Software Foundation, Inc.  License GPLv3+:  GNU  
        GPL version 3 or later <http://gnu.org/licenses/gpl.html>.               
@@ -166,7 +166,7 @@ COPYRIGHT
 
 Le proporciona una idea de dónde puede encontrar información adicional. Esto a menudo incluye otros comandos que están relacionados con este comando.
 
-```
+```shell
 SEE ALSO                                                                        
        Full documentation at: <http://www.gnu.org/software/coreutils/ls>        
        or available locally via: info '(coreutils) ls invocation' 
@@ -176,7 +176,7 @@ Para buscar un término en una página de manual, escriba el carácter / seguido
 
 Si se encuentra una coincidencia, se resaltará. Para pasar a la siguiente coincidencia del término, presione **n**. Para volver a una coincidencia anterior del término, presione **Mayús+N**. Si no se encuentra el término, o al llegar al final de los partidos, el programa informará de Patrón no encontrado (presione Retorno).
 
-```
+```shell
 MAN(1)                        Manual pager utils                        MAN(1)  
                                                                                 
 NAME                                                                            
@@ -221,14 +221,14 @@ De forma predeterminada, hay nueve secciones de páginas de manual:
 
 El comando man busca en cada una de estas secciones en orden hasta que encuentra la primera coincidencia. Por ejemplo, si ejecuta el comando man cal, en la primera sección (Comandos generales) se busca una página de manual llamada cal. Si no se encuentra, se busca en la segunda sección. Si no se encuentra ninguna página de manual después de buscar en todas las secciones, se devuelve un mensaje de error:
 
-```
+```shell
 sysadmin@localhost:~$ man zed                                          
 No manual entry for zed      
 ```
 
 Para determinar a qué sección pertenece una página de manual específica, observe el valor numérico de la primera línea de la salida de la página de manual. Por ejemplo, el comando cal pertenece a la primera sección de las páginas del manual:
 
-```
+```shell
 CAL(1)                    BSD General Commands Manual             CAL(1)
 ```
 
@@ -238,17 +238,17 @@ Por ejemplo, hay un comando llamado passwd que le permite cambiar su contraseña
 
 El comando passwd es un comando de usuario, por lo que la página del manual asociada se encuentra en la primera sección. El comando man muestra la página man para el comando passwd de forma predeterminada:
 
-```
+```shell
 sysadmin@localhost:~$ man passwd
 ```
 
-```
+```shell
 PASSWD(1)                        User Commands                 PASSWD(1)
 ```
 
 Entonces, ¿cómo se muestra la página de manual para el archivo passwd? En primer lugar, determine en qué sección se encuentra la página del manual. Para buscar páginas de manual por nombre, utilice la opción -f del comando man. Muestra las páginas del manual que coinciden, o coinciden parcialmente, con un nombre específico y proporciona el número de sección y una breve descripción de cada página del manual del manual:
 
-```
+```shell
 sysadmin@localhost:~$ man -f passwd                                    
 passwd (5)           - the password file                              
 passwd (1)           - change user password                           
@@ -259,11 +259,11 @@ passwd (1ssl)        - compute password hashes
 
 Para especificar una sección diferente, proporcione el número de la sección como primer argumento del comando man. El siguiente comando muestra la página del comando man passwd ubicada en la sección 5, que está asociada con el archivo passwd:
 
-```
+```shell
 sysadmin@localhost:~$ man 5 passwd
 ```
 
-```
+```shell
 PASSWD(5)                File Formats and Conversions          PASSWD(5)
 ```
 
@@ -271,7 +271,7 @@ Desafortunadamente, no siempre recordará el nombre exacto de la página del com
 
 Por ejemplo, para encontrar una página de manual que muestre cómo copiar directorios, busque la palabra clave copy:
 
-```
+```shell
 sysadmin@localhost:~$ man -k copy                                               
 cp (1)               - copy files and directories                               
 cpgr (8)             - copy with locking the given file to the password or gr...
@@ -290,7 +290,7 @@ Recuerde que hay miles de páginas de manual, por lo que cuando busque una palab
 ## 6.3 Búsqueda de comandos y documentación
 El comando whatis (o man -f) devuelve la sección en la que se almacena una página de manual. En ocasiones, este comando devuelve resultados inusuales, como los siguientes:
 
-```
+```shell
 sysadmin@localhost:~$ whatis ls                                              
 ls (1)               - list directory contents 
 ls (lp)              - list directory contents
@@ -304,7 +304,7 @@ Sin embargo, esto plantea un pequeño problema: cuando se escribe el comando ls,
 ### 6.3.1 ¿Dónde se encuentran estos comandos?
 Para buscar la ubicación de un comando o las páginas del comando man de un comando, utilice el comando whereis. Este comando busca comandos, archivos de código fuente y páginas de manual en ubicaciones específicas donde normalmente se almacenan estos archivos:
 
-```
+```shell
 sysadmin@localhost:~$ whereis ls 
 ls: /bin/ls /usr/share/man/man1p/ls.1.gz /usr/share/man/man1/ls.1.gz
 ```
@@ -315,7 +315,7 @@ El comando whereis está diseñado específicamente para buscar comandos y pági
 
 Para buscar cualquier archivo o directorio, utilice el comando localice. Este comando busca en una base de datos todos los archivos y directorios que estaban en el sistema cuando se creó la base de datos. Normalmente, el comando para generar esta base de datos se ejecuta todas las noches.
 
-```
+```shell
 sysadmin@localhost:~$ locate gshadow                                   
 /etc/gshadow                                                           
 /etc/gshadow-                                                          
@@ -339,21 +339,21 @@ La salida del comando locate puede ser bastante grande. Al buscar un nombre de a
 
 En muchos casos, es útil empezar por averiguar cuántos archivos coinciden. Para ello, utilice la opción -c del comando localice:
 
-```
+```shell
 sysadmin@localhost:~$ locate -c passwd                                 
 98
 ```
 
 Para limitar la salida producida por el comando localice, utilice la opción -b. Esta opción solo incluye listados que tienen el término de búsqueda en el nombre base del nombre del archivo. El _nombre_ base es la parte del nombre de archivo que no incluye los nombres de directorio.
 
-```
+```shell
 sysadmin@localhost:~$ locate -c -b passwd                              
 83 
 ```
 
 Como puede ver en la salida anterior, todavía habrá muchos resultados cuando se use la opción -b. Para limitar aún más la salida, coloque un carácter \ delante del término de búsqueda. Este carácter limita la salida a nombres de archivo que coincidan exactamente con el término:
 
-```
+```shell
 sysadmin@localhost:~$ locate -b "\passwd"                              
 /etc/passwd                                                                     
 /etc/pam.d/passwd                                                               
@@ -361,7 +361,6 @@ sysadmin@localhost:~$ locate -b "\passwd"
 /usr/share/doc/passwd                                                           
 /usr/share/lintian/overrides/passwd
 ```
-
 ## 6.4 Documentación de información
 Las páginas de manual son excelentes fuentes de información, pero tienden a tener algunas desventajas. Un ejemplo es que cada página de manual es un documento independiente, no relacionado con ninguna otra página de manual. Si bien algunas páginas de manual tienen una sección VÉASE TAMBIÉN que puede hacer referencia a otras páginas de manual, tienden a ser fuentes independientes de documentación.
 
@@ -373,19 +372,19 @@ Otra ventaja de la información sobre las páginas de manual es que el estilo de
 ### 6.4.1 Visualización de la documentación de información
 Para mostrar la documentación info de un comando, utilice el comando info.
 
-```
+```shell
 info command
 ```
 
 Por ejemplo, para mostrar la página de información del comando ls:
 
-```
+```shell
 sysadmin@localhost:~$ info ls     
 ```
 
 Navegue por el documento con las teclas de flecha:
 
-```
+```shell
 Next: dir invocation,  Up: Directory listing
 
 10.1 `ls': List directory contents                                     
@@ -408,13 +407,13 @@ and control characters are output as-is.
 
 -----Info: (coreutils)ls invocation, 57 lines --Top-----------------------------
 Welcome to Info version 6.5.  Type H for help, h for tutorial. 
-```
+```shell
 
 Esta documentación se divide en nodos y, en el ejemplo anterior, la línea resaltada en blanco muestra que actualmente se encuentra en el nodo de invocación ls. La primera línea proporciona información de índice sobre la ubicación actual dentro del documento. El siguiente nodo, como el siguiente capítulo de un libro, sería el nodo de invocación de directorios. Subiendo un nivel se encuentra el nodo de listado de directorios.
 
 Al desplazarse por el documento, observe el menú del comando ls:
 
-```
+```shell
 * Menu:                                                                         
                            
 * Which files are listed::                     
@@ -433,11 +432,11 @@ you're accustomed to.  In that case, set the `LC_ALL' environment
 variable to `C'.                     
                                            
 -----Info: (coreutils)ls invocation, 57 lines --Bot-----------------------------
-```
+```shell
 
 Los elementos del menú son hipervínculos que enlazan con nodos que describen más sobre el comando ls. Por ejemplo, si se coloca el cursor en la línea * Ordenando la salida:: y pulsando la tecla **Enter**, se accede a un nodo que describe la ordenación de la salida del comando ls:
 
-```
+```shell
 Next: Details about version sort,  Prev: What information is listed,  Up: ls in\
 vocation                                                                        
                                                                                 
@@ -467,7 +466,7 @@ Tenga en cuenta que al entrar en el nodo sobre la clasificación se accede a un 
 ### 6.4.2 Navegación por documentos info
 Al igual que el comando man, una lista de comandos de movimiento está disponible presionando la tecla **Shift + H** mientras lee la documentación de información:
 
-```
+```shell
 Basic Info command keys                                                         
                                                                                 
 l           Close this help window.                                             
@@ -497,7 +496,7 @@ Tenga en cuenta que para cerrar la pantalla de ayuda, escriba la tecla **L**, qu
 ### 6.4.3 Exploración de la documentación de información
 En lugar de usar la documentación de información para buscar información sobre un comando o característica específica, considere explorar las capacidades de Linux leyendo la documentación de información. Ejecute el comando info sin ningún argumento para llevarlo al nivel superior de la documentación. Este es un buen punto de partida para explorar muchas de las características que se ofrecen:
 
-```
+```shell
 File: dir,      Node: Top,      This is the top of the INFO tree.               
                                                                                 
 This is the Info main menu (aka directory node).                                
@@ -528,7 +527,7 @@ En muchos casos, las páginas de manual o la documentación de información prop
 ### 6.5.1 Uso de la opción de ayuda
 Muchos comandos proporcionarán información básica, muy similar a la SINOPSIS que se encuentra en las páginas de manual, simplemente usando la opción --help al comando. Esta opción es útil para aprender rápidamente el uso básico de un comando sin salir de la línea de comandos:
 
-```
+```shell
 sysadmin@localhost:~$  cat --help                                                
 Usage: cat [OPTION]... [FILE]...                                                
 Concatenate FILE(s) to standard output.                                         

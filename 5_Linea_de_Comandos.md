@@ -27,7 +27,7 @@ Cuando se ejecuta una aplicación de terminal y aparece un shell, que muestra un
 
 La estructura de la solicitud puede variar de una distribución a otra, pero normalmente contiene información sobre el usuario y el sistema. A continuación, se muestra una estructura de solicitud común:
 
-```
+```shell
 sysadmin@localhost:~$
 ```
 
@@ -46,7 +46,7 @@ El símbolo ~ se utiliza como abreviatura para el directorio de inicio del usuar
 
 Para ejecutar un comando, el primer paso es escribir el nombre del comando. Haga clic en el terminal de la derecha. Escriba ls y presione **Enter**. El resultado debería parecerse al siguiente ejemplo:
 
-```
+```shell
 sysadmin@localhost:~$ ls
 Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 ```
@@ -58,7 +58,7 @@ Muchos comandos se pueden usar por sí mismos sin ninguna otra entrada. Algunos 
 
 El formato típico de un comando es el siguiente:
 
-```
+```shell
 command [options] [arguments]
 ```
 
@@ -68,20 +68,20 @@ Las opciones se utilizan para modificar el comportamiento principal de un comand
 
 ### 5.3.1 Argumentos
 
-```
+```shell
 command [options] [arguments]
 ```
 
 Un argumento se puede usar para especificar algo sobre lo que el comando debe actuar. Si al comando ls se le da el nombre de un directorio como argumento, enumera el contenido de ese directorio. En el siguiente ejemplo, se utiliza el directorio /etc/ppp como argumento; La salida resultante es una lista de archivos contenidos en ese directorio:
 
-```
+```shell
 sysadmin@localhost:~$ ls /etc/ppp                                 
 ip-down.d  ip-up.d        
 ```
 
 El comando ls también acepta varios argumentos. Para enumerar el contenido de los directorios /etc/ppp y /etc/ssh, páselos como argumentos:
 
-```
+```shell
 sysadmin@localhost:~$ ls /etc/ppp /etc/ssh         
 /etc/ppp:                       
 ip-down.d  ip-up.d                                  
@@ -93,13 +93,13 @@ ssh_host_dsa_key     ssh_host_ecdsa_key.pub   ssh_import_id
 
 ### 5.3.2 Opciones
 
-```
+```shell
 command [options] [arguments]
 ```
 
 Las opciones se pueden usar con comandos para expandir o modificar la forma en que se comporta un comando. Por ejemplo, el uso de la opción -l del comando ls da como resultado una _lista larga_, que proporciona información adicional sobre los archivos que se enumeran, como los permisos, el tamaño del archivo y otra información:
 
-```
+```shell
 sysadmin@localhost:~$ ls -l                                       
 total 0
 drwxr-xr-x 1 sysadmin sysadmin 0 Jan 29  20:13 Desktop             
@@ -116,14 +116,14 @@ drwxr-xr-x 1 sysadmin sysadmin 0 Jan 29  20:13 Videos
 
 A menudo, el carácter se elige para que sea mnemotécnico para su propósito, como elegir la letra _l_ para _largo_ o _r_ para _invertido_. De forma predeterminada, el comando ls imprime los resultados en orden alfabético y, por lo tanto, al agregar la opción -r, imprime los resultados en orden alfabético inverso.
 
-```
+```shell
 sysadmin@localhost:~$ ls -r
 Videos  Templates  Public  Pictures  Music  Downloads  Documents  Desktop
 ```
 
 En la mayoría de los casos, las opciones se pueden utilizar junto con otras opciones. Se pueden dar como opciones separadas, como en -l -r, o combinadas, como en -lr. La combinación de estas dos opciones daría como resultado una salida de lista larga en orden alfabético inverso:
 
-```
+```shell
 sysadmin@localhost:~$ ls -lr                                                    
 total 32                                                                        
 drwxr-xr-x 2 sysadmin sysadmin 4096 Oct 31 20:13 Videos                         
@@ -138,7 +138,7 @@ drwxr-xr-x 2 sysadmin sysadmin 4096 Oct 31 20:13 Desktop
 
 El orden de las opciones combinadas no es importante. El resultado de todos estos ejemplos sería el mismo:
 
-```
+```shell
 ls -l -r
 ls -rl
 ls -lr
@@ -146,21 +146,21 @@ ls -lr
 
 De forma predeterminada, la opción -l del comando ls muestra los tamaños de los archivos en bytes:
 
-```
+```shell
 sysadmin@localhost:~$ ls -l /usr/bin/perl                         
 -rwxr-xr-x 2 root root 10376 Feb  4  2018 /usr/bin/perl      
 ```
 
 Si se agrega la opción -h, los tamaños de archivo se mostrarán en  formato _legible por humanos_:
 
-```
+```shell
 sysadmin@localhost:~$ ls -lh /usr/bin/perl                        
 -rwxr-xr-x 2 root root 11K Feb  4  2018 /usr/bin/perl
 ```
 
 Las opciones suelen ser letras individuales; Sin embargo, a veces también son palabras o frases. Normalmente, los comandos más antiguos utilizan letras simples, mientras que los comandos más nuevos utilizan palabras completas para las opciones. Las opciones de una sola letra van precedidas de un solo guion, como la opción -h. Las opciones de palabra completa van precedidas de dos caracteres de guion. La opción -h también tiene una forma de palabra completa equivalente; la opción --human-readable.
 
-```
+```shell
 sysadmin@localhost:~$ ls -l --human-readable /usr/bin/perl                        
 -rwxr-xr-x 2 root root 11K Feb  4  2018 /usr/bin/perlsysadmin@localhost:~$ ls -l --human-readable /usr/bin/perl                        
 -rwxr-xr-x 2 root root 11K Feb  4  2018 /usr/bin/perl
@@ -175,7 +175,7 @@ Cuando se encuentra el comando deseado, las  teclas **← de flecha izquierda**
 
 Para ver la lista de historial de un terminal, utilice el comando history:
 
-```
+```shell
 sysadmin@localhost:~$ date                                       
 Wed Dec 12 04:28:12 UTC 2018                                   
 sysadmin@localhost:~$ ls                                           
@@ -197,7 +197,7 @@ sysadmin@localhost:~$ history
 
 Si el comando deseado está en la lista que genera el comando history, se puede ejecutar escribiendo un signo de exclamación. y, a continuación, el número junto al comando, por ejemplo, para volver a ejecutar el comando cal:
 
-```
+```shell
 sysadmin@localhost:~$ history                                     
     1  date                                                      
     2  ls                                                         
@@ -215,7 +215,7 @@ Su Mo Tu We Th Fr Sa
 
 Si al comando history se le pasa un número como argumento, genera ese número de comandos anteriores de la lista de historial. Por ejemplo, para mostrar los tres últimos comandos:
 
-```
+```shell
 sysadmin@localhost:~$ history 3
     6  date                                                                     
     7  ls /home                                                                   
@@ -224,7 +224,7 @@ sysadmin@localhost:~$ history 3
 
  Para ejecutar el _enésimo_ comando desde la parte inferior de la lista del historial, escriba !-_n_ y presione Enter. Por ejemplo, para ejecutar el tercer comando desde la parte inferior de la lista del historial, ejecute lo siguiente:
  
-```
+```shell
 sysadmin@localhost:~$ !-3                                                       
 date                                                                            
 Wed Dec 12 04:31:55 UTC 2018 
@@ -232,7 +232,7 @@ Wed Dec 12 04:31:55 UTC 2018
 
 Para ejecutar el comando más reciente, escriba !! y presione **Enter**:
 
-```
+```shell
 sysadmin@localhost:~$ date                                                      
 Wed Dec 12 04:32:36 UTC 2018                                                    
 sysadmin@localhost:~$ !!                                                        
@@ -242,7 +242,7 @@ Wed Dec 12 04:32:38 UTC 2018
 
 Para ejecutar la iteración más reciente de un comando específico, escriba ! seguido del nombre del comando y presione **Enter**. Por ejemplo, para ejecutar el comando ls más reciente:
 
-```
+```shell
 sysadmin@localhost:~$ !ls                                                       
 ls /home                                                                        
 sysadmin 
@@ -256,19 +256,19 @@ _Las variables locales_ o _de shell_ solo existen en el shell actual y no pueden
 
 Para establecer el valor de una variable, utilice la siguiente expresión de asignación. Si la variable ya existe, se modifica el valor de la variable. Si el nombre de la variable aún no existe, el shell crea una nueva variable local y establece el valor:
 
-```
+```shell
 variable=value
 ```
 
 En el ejemplo siguiente se crea una variable local denominada variable1 y se le asigna un valor de Something:
 
-```
+```shell
 sysadmin@localhost:~$ variable1='Something'
 ```
 
 El comando echo se utiliza para mostrar la salida en el terminal. Para mostrar el valor de la variable, utilice un carácter $ con signo de dólar seguido del nombre de la variable como argumento para el comando echo:El comando echo se utiliza para mostrar la salida en el terminal. Para mostrar el valor de la variable, utilice un carácter $ con signo de dólar seguido del nombre de la variable como argumento para el comando echo:
 
-```
+```shell
 sysadmin@localhost:~$ echo $variable1                                   
 Something
 ```
@@ -277,20 +277,20 @@ Something
 
 _Las variables de entorno_, también llamadas _variables globales_, están disponibles en todo el sistema, en todos los shells utilizados por Bash al interpretar comandos y realizar tareas. El sistema recrea automáticamente las variables de entorno cuando se abre un nuevo shell. Algunos ejemplos son las variables PATH, HOME e HISTSIZE. La variable HISTSIZE define el número de comandos anteriores que se van a almacenar en la lista del historial. El comando del ejemplo siguiente muestra el valor de la variable HISTSIZE:
 
-```
+```shell
 sysadmin@localhost:~$ echo $HISTSIZE
 1000
 ```
 
 Para modificar el valor de una variable existente, utilice la expresión de asignación:
 
-```
+```shell
 sysadmin@localhost:~$ HISTSIZE=500                                            
 sysadmin@localhost:~$ echo $HISTSIZE                              
 500  
 ```
 
-```
+```shell
 Hay muchas variables disponibles para el shell de Bash, así como variables que afectan a diferentes comandos de Linux. Una discusión de todas las variables está más allá del alcance de este capítulo; sin embargo, se cubrirán más variables de shell a medida que avance este curso.
 ```
 
@@ -298,25 +298,25 @@ Cuando se ejecuta sin argumentos, el comando env genera una lista de las variabl
 
 En un ejemplo anterior, la variable1 se creó como una variable local, por lo que la siguiente búsqueda en las variables de entorno no da como resultado ninguna salida:
 
-```
+```shell
 sysadmin@localhost:~$ env | grep variable1       
 ```
 
-```
+```shell
 La pipa | Pasa la salida del comando env al comando grep, que busca la salida.
+```
 
 Esta técnica de filtrado de texto se tratará en detalle más adelante en el curso.
-```
 
 El comando export se utiliza para convertir una variable local en una variable de entorno.
 
-```
+```shell
 export variable
 ```
 
 Después de exportar variable1, ahora es una variable de entorno. Ahora se encuentra en la búsqueda a través de las variables de entorno:
 
-```
+```shell
 sysadmin@localhost:~$ export variable1                                  
 sysadmin@localhost:~$ env | grep variable1
 variable1=Something
@@ -324,7 +324,7 @@ variable1=Something
 
 El comando export también se puede utilizar para convertir una variable en una variable de entorno en el momento de su creación utilizando la expresión de asignación como argumento:
 
-```
+```shell
 sysadmin@localhost:~$ export variable2='Else'                           
 sysadmin@localhost:~$ env | grep variable2                             
 variable2=Else
@@ -332,7 +332,7 @@ variable2=Else
 
 Para cambiar el valor de una variable de entorno, utilice la expresión de asignación:
 
-```
+```shell
 sysadmin@localhost:~$ variable1=$variable1' '$variable2                
 sysadmin@localhost:~$ echo $variable1                                   
 Something Else
@@ -340,13 +340,13 @@ Something Else
 
 Las variables exportadas se pueden eliminar mediante el comando unset:
 
-```
+```shell
 sysadmin@localhost:~$ unset variable2sysadmin@localhost:~$ unset variable2
 ```
 ### 5.4.3 Variable de trayecto
 Una de las variables de shell de Bash más importantes que hay que entender es la variable PATH. Contiene una lista que define en qué directorios busca el shell para encontrar comandos. Si se ingresa un comando válido y el shell devuelve un error de "comando no encontrado", es porque el shell Bash no pudo localizar un comando con ese nombre en ninguno de los directorios incluidos en la ruta. El siguiente comando muestra la ruta del shell actual:
 
-```
+```shell
 sysadmin@localhost:~$ echo $PATH                                        
 /home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 sysadmin@localhost:~$
@@ -354,7 +354,7 @@ sysadmin@localhost:~$
 
 Cada directorio de la lista está separado por dos puntos : carácter. En función del resultado anterior, la ruta de acceso contiene los siguientes directorios. El shell comprobará los directorios en el orden en que aparecen en la lista:
 
-```
+```shell
 /home/sysadmin/bin
 /usr/local/sbin
 /usr/local/bin
@@ -365,14 +365,13 @@ Cada directorio de la lista está separado por dos puntos : carácter. En funci�
 /usr/games
 ```
 
-
 > Cada uno de estos directorios está representado por una ruta de acceso. Una ruta es una lista de directorios separados por el carácter /. Si piensa en el sistema de archivos como un mapa, las rutas son las direcciones de directorio, que incluyen instrucciones de navegación paso a paso; Se pueden utilizar para indicar la ubicación de cualquier archivo dentro del sistema de archivos. Por ejemplo, /home/sysadmin es una ruta al directorio de inicio:
 > ![](img/20241001165712.png)
 > Los directorios y las rutas se tratarán en detalle más adelante en el curso.
 
 Si el comando no se encuentra en ningún directorio enumerado en la variable PATH, entonces el shell devuelve un error:
 
-```
+```shell
 sysadmin@localhost:~$ zed                                              
 -bash: zed: command not found                                           
 sysadmin@localhost:~$
@@ -380,7 +379,7 @@ sysadmin@localhost:~$
 
 Si se instala software personalizado en el sistema, puede ser necesario modificar el PATH para facilitar la ejecución de estos comandos. Por ejemplo, lo siguiente agregará y verificará el directorio /usr/bin/custom a la variable PATH:
 
-```
+```shell
 sysadmin@localhost:~$ PATH=/usr/bin/custom:$PATH                        
 sysadmin@localhost:~$ echo $PATH                                       
 /usr/bin/custom:/home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games                                              sysadmin@localhost:~$ PATH=/usr/bin/custom:$PATH                        
@@ -392,7 +391,7 @@ Al actualizar la variable PATH, incluya siempre la ruta actual, para no perder e
 ## 5.5 Tipos de comandos
 Una forma de obtener más información sobre un comando es observar de dónde proviene. El comando type se puede utilizar para determinar información sobre el tipo de comando.
 
-```
+```shell
 type command
 ```
 
@@ -402,22 +401,21 @@ También llamados comandos integrados, los comandos internos están integrados e
 
 El comando type identifica el comando cd como un comando interno:
 
-```
+```shell
 sysadmin@localhost:~$ type cd                                     
 cd is a shell builtin
 ```
-
 ### 5.5.2 Comandos externos
 Los comandos externos son ejecutables binarios almacenados en directorios en los que el shell realiza búsquedas. Si un usuario escribe el comando ls, el shell busca en los directorios que se enumeran en la variable PATH para intentar encontrar un archivo llamado ls que pueda ejecutar.
 Si un comando no se comporta como se esperaba o si un comando no es accesible como debería, puede ser beneficioso saber dónde está el shell encontrando el comando o qué versión está utilizando. Sería tedioso tener que buscar manualmente en cada directorio que aparece en la variable PATH. En su lugar, utilice el comando which para mostrar la ruta completa al comando en cuestión:
 
-```
+```shell
 which command
 ```
 
 El comando which busca la ubicación de un comando mediante la búsqueda de la variable PATH.
 
-```
+```shell
 sysadmin@localhost:~$ which ls                                       
 /bin/ls                                                               
 sysadmin@localhost:~$ which cal                                        
@@ -426,21 +424,21 @@ sysadmin@localhost:~$ which cal
 
 Los comandos externos también se pueden ejecutar escribiendo la ruta completa al comando. Por ejemplo, para ejecutar el comando ls:
 
-```
+```shell
 sysadmin@localhost:~$ /bin/ls                                                   
 Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 ```
 
 En el caso de los comandos externos, el comando type muestra la ubicación del comando:
 
-```
+```shell
 sysadmin@localhost:~$ type cal                                      
 cal is /usr/bin/cal
 ```
 
 En algunos casos, la salida del comando type puede diferir significativamente de la salida del comando which:
 
-```
+```shell
 sysadmin@localhost:~$ type echo                                     
 echo is a shell builtin
 sysadmin@localhost:~$ which echo                                        
@@ -449,7 +447,7 @@ sysadmin@localhost:~$ which echo
 
 El uso de la opción -a del comando type muestra todas las ubicaciones que contienen el comando denominado:
 
-```
+```shell
 sysadmin@localhost:~$ type -a echo                                      
 echo is a shell builtin                                                
 echo is /bin/echo
@@ -460,7 +458,7 @@ Un alias se puede utilizar para asignar comandos más largos a secuencias de tec
 Por ejemplo, el comando ls -l suele tener un alias de l o ll. Dado que estos comandos más pequeños son más fáciles de escribir, se vuelve más rápido ejecutar la línea de comandos ls -l.
 Para determinar qué alias se establecen en el shell actual, use el comando alias:
 
-```
+```shell
 sysadmin@localhost:~$ alias                                             
 alias egrep='egrep --color=auto'                                       
 alias fgrep='fgrep --color=auto'                                        
@@ -474,13 +472,13 @@ alias ls='ls --color=auto'
 Los alias de los ejemplos anteriores se crearon mediante archivos de inicialización. Estos archivos están diseñados para que el proceso de creación de alias sea automático.
 Los nuevos alias se pueden crear utilizando el siguiente formato, donde name es el nombre que se le dará al alias y command es el comando que se ejecutará cuando se ejecute el alias.
 
-```
+```shell
 alias name=command
 ```
 
 Por ejemplo, el comando cal 2019 muestra el calendario para el año 2019. Supongamos que termina ejecutando este comando con frecuencia. En lugar de ejecutar el comando completo cada vez, puede crear un alias llamado mycal y ejecutar el alias, como se muestra en el siguiente gráfico:
 
-```
+```shell
 sysadmin@localhost:~$ alias mycal="cal 2019"                                    
 sysadmin@localhost:~$ mycal                                                     
                             2019                                                
@@ -497,7 +495,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 Los alias creados de esta manera solo persisten mientras el shell está abierto. Una vez que se cierra el shell, se pierden los nuevos alias. Además, cada shell tiene sus propios alias, por lo que los alias creados en un shell no estarán disponibles en un nuevo shell que se abra.
 El comando type puede identificar alias de otros comandos:
 
-```
+```shell
 sysadmin@localhost:~$ type ll                                          
 ll is aliased to `ls -alF'                                              
 sysadmin@localhost:~$ type -a ls                                          
@@ -511,7 +509,7 @@ Las funciones también se pueden compilar utilizando comandos existentes para cr
 
 Las funciones son más avanzadas que los alias y, por lo general, se utilizan en scripts de shell de Bash. Normalmente, las funciones se utilizan para ejecutar varios comandos. Para crear una función, se utiliza la siguiente sintaxis:
 
-```
+```shell
 function_name () 
 {
    commands
@@ -521,7 +519,7 @@ function_name ()
 En el formato anterior, function_name puede ser cualquier cosa que el administrador quiera llamar a la función. Los comandos que el administrador desea ejecutar pueden reemplazar el marcador de posición de comandos. Tenga en cuenta el formato, en particular, la ubicación del paréntesis () y las llaves {}, así como la convención de usar tabulaciones para que la función sea más legible.
 Las funciones son útiles ya que permiten ejecutar un conjunto de comandos de uno en uno en lugar de escribir cada comando repetidamente. En el siguiente ejemplo, se crea una función llamada my_report para ejecutar los comandos ls, date y echo.
 
-```
+```shell
 sysadmin@localhost:~$ my_report () {                                            
 > ls Documents                                                                  
 > date                                                                          
@@ -532,7 +530,7 @@ sysadmin@localhost:~$ my_report () {
 Al crear una función, aparecerá un carácter > como solicitud para ingresar los comandos de la función. Las llaves {} se usan para que el shell sepa cuándo comienza y termina una función para salir del > solicitud.
 Una vez que se crea una función, el nombre de la función se puede invocar desde el símbolo del sistema BASH para ejecutar la función:
 
-```
+```shell
 sysadmin@localhost:~$ my_report                                                 
 School            alpha-third.txt  hidden.txt    numbers.txt  spelling.txt      
 Work              alpha.txt        letters.txt   os.csv       words             
@@ -553,14 +551,14 @@ Las comillas dobles detienen el shell de interpretar algunos metacaracteres (car
 
 Dentro de las comillas dobles, un asterisco es solo un asterisco, un signo de interrogación es solo un signo de interrogación, y así sucesivamente, lo cual es útil cuando desea mostrar algo en la pantalla que normalmente es un carácter especial para el shell. En el comando echo a continuación, el shell Bash no convierte el patrón glob en nombres de archivo que coincidan con el patrón:
 
-```
+```shell
 sysadmin@localhost:~$ echo "The glob characters are *, ? and [ ]"      
 The glob characters are *, ? and [ ]
 ```
 
 Las comillas dobles todavía permiten la sustitución de comandos, la sustitución de variables y permiten algunos otros metacaracteres de shell que aún no se han discutido. La siguiente demostración muestra que el valor de la variable PATH todavía se muestra:
 
-```
+```shell
 sysadmin@localhost:~$ echo "The path is $PATH"                          
 The path is /usr/bin/custom:/home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 ```
@@ -569,7 +567,7 @@ Las comillas simples evitan que el shell interprete los caracteres especiales, i
 
 Por ejemplo, para hacer que el carácter $ signifique simplemente un $, en lugar de que actúe como un indicador para que el shell busque el valor de una variable, ejecute el segundo comando que se muestra a continuación:
 
-```
+```shell
 sysadmin@localhost:~$ echo The car costs $100                           
 The car costs 00                                                        
 sysadmin@localhost:~$ echo 'The car costs $100'                        
@@ -578,13 +576,13 @@ The car costs $100
 ### 5.6.3 Carácter de barra invertida
 También existe una técnica alternativa para comillas simples de un solo carácter. Considere el siguiente mensaje:
 
-```
+```shell
 The service costs $1 and the path is $PATH
 ```
 
 Si esta oración se coloca entre comillas dobles, $1 y $PATH se consideran variables.
 
-```
+```shell
 sysadmin@localhost:~$ echo "The service costs $1 and the path is $PATH"
 
 ‌⁠​​⁠​The service costs  and the path is /usr/bin/custom:/home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
@@ -592,15 +590,15 @@ sysadmin@localhost:~$ echo "The service costs $1 and the path is $PATH"
 
 Si se coloca entre comillas simples, $1 y $PATH no se consideran variables.
 
-```
+```shell
 sysadmin@localhost:~$ echo 'The service costs $1 and the path is $PATH' 
 The service costs $1 and the path is $PATH 
-```
+```shell
 
 Pero, ¿qué pasa si desea que $PATH traten como una variable y $1 no?
 En este caso, use un carácter de barra diagonal inversa \ delante del carácter $ del signo de dólar para evitar que el shell lo interprete. El siguiente comando muestra el uso del carácter \:
 
-```
+```shell
 sysadmin@localhost:~$ echo The service costs \$1 and the path is $PATH
 The service costs $1 and the path is /usr/bin/custom:/home/sysadmin/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 ```
@@ -609,21 +607,21 @@ Las comillas invertidas, o acentos graves, se utilizan para especificar un coman
 
 Si bien puede sonar confuso, un ejemplo debería aclarar las cosas. Para comenzar, observe la salida del comando date:
 
-```
+```shell
 sysadmin@localhost:~$ date                                           
 Mon Nov  4 03:35:50 UTC 2018
 ```
 
 Ahora, observe la salida del comando echo:
 
-```
+```shell
 sysadmin@localhost:~$ echo Today is date                               
 Today is date
 ```
 
 En el comando anterior, la palabra fecha se trata como texto normal y el shell pasa la fecha al comando echo. Para ejecutar el comando date y que la salida de ese comando se envíe al comando echo, coloque el comando date entre dos caracteres de comillas inversas:
 
-```
+```shell
 sysadmin@localhost:~$ echo Today is `date`                         
 Today is Mon Nov 4 03:40:04 UTC 2018
 ```
@@ -631,7 +629,7 @@ Today is Mon Nov 4 03:40:04 UTC 2018
 Las instrucciones de control le permiten usar varios comandos a la vez o ejecutar comandos adicionales, dependiendo del éxito de un comando anterior. Normalmente, estas instrucciones de control se utilizan dentro de los scripts, pero también se pueden utilizar en la línea de comandos.
 ### 5.7.1 Punto y coma
 
-```
+```shell
 command1; command2; command3
 ```
 
@@ -639,7 +637,7 @@ El punto y coma ; se puede utilizar para ejecutar varios comandos, uno tras otro
 
 Por ejemplo, para imprimir los meses de enero, febrero y marzo de 2030, ejecute el siguiente comando:
 
-```
+```shell
 sysadmin@localhost:~$ cal 1 2030; cal 2 2030; cal 3 2030               
     January 2030                                                       
 Su Mo Tu We Th Fr Sa                                                            
@@ -668,7 +666,7 @@ Su Mo Tu We Th Fr Sa
 ```
 ### 5.7.2 Ampersand doble
 
-```bash
+```shell
 command1 && command2
 ```
 El doble && actúa como un "y" lógico; si el primer comando tiene éxito, entonces el segundo comando también se ejecutará. Si se produce un error en el primer comando, el segundo comando no se ejecutará.
@@ -679,7 +677,7 @@ En el siguiente ejemplo, el primer comando se ejecuta correctamente porque el di
  
 Para utilizar el éxito o el fracaso del comando ls junto con los comandos && execute como los siguientes. En el primer ejemplo, el comando echo se ejecuta porque el comando ls se realiza correctamente:
 
-```
+```shell
 sysadmin@localhost:~$ ls /etc/ppp                  
 ip-down.d  ip-up.d           
 sysadmin@localhost:~$ ls /etc/junk                             
@@ -688,14 +686,14 @@ ls: cannot access /etc/junk: No such file or directory
 
 En el segundo ejemplo, el comando echo no se ejecuta porque se produce un error en el comando ls:
 
-```
+```shell
 sysadmin@localhost:~$ ls /etc/ppp && echo success          
 ip-down.d  ip-up.d        
 success  
 ```
 ### 5.7.3 Doble Pipe
 
-```
+```shell
 command1 || command2
 ```
 
@@ -704,7 +702,7 @@ Con la tubería doble, si el primer comando se ejecuta correctamente, se omite e
 
 En el siguiente ejemplo, el comando echo solo se ejecuta si se produce un error en el comando ls:
 
-```
+```shell
 sysadmin@localhost:~$ ls /etc/ppp || echo failed                 
 ip-down.d  ip-up.d              
 sysadmin@localhost:~$ ls /etc/junk || echo failed                  

@@ -123,7 +123,7 @@ El segundo tipo de interfaz, la CLI, es una interfaz basada en texto para la com
 
 La CLI comienza con un inicio de sesión basado en texto, como se muestra a continuación. En un inicio de sesión exitoso, después de que se le solicite un nombre de usuario y una contraseña, se le llevará a un shell CLI personalizado para el usuario en particular.
 
-```
+```shell
 ubuntu 18.04 ubuntu tty2
  
 ubuntu login:
@@ -131,7 +131,7 @@ ubuntu login:
 
  En el modo CLI no hay ventanas para moverse. Los editores de texto, los navegadores web y los clientes de correo electrónico se presentan solo en formato de texto. Así es como funcionaba UNIX antes de que los entornos gráficos fueran la norma. La mayoría de los servidores también funcionan en este modo, ya que las personas no inician sesión en ellos directamente, lo que hace que una interfaz gráfica sea un desperdicio de recursos. A continuación, se muestra un ejemplo de una pantalla CLI después de iniciar sesión:
  
-```
+```shell
 ubuntu 18.04 ubuntu tty2
  
 ubuntu login: sue
