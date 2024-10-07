@@ -3,3 +3,7 @@
 - ## [Trabajando con Linux](3_Trabajando_con_Linux.md)
 - ## [Código Abierto](4_Codigo_abrierto.md)
 - ## [Linea de Comandos](5_Linea_de_Comandos.md)
+- ## [Ayuda](6_Ayuda.md)
+- ## [Sistema de Archivos](7_Sistema_de_archivos.md)
+- ## [Administrando Archivos y Directorios](8_Administrando_archivos_y_directorios.md)
+- ## [Archivando y Compresion](9_Archivando_y_Compresion.md)

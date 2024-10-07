@@ -1,4 +1,4 @@
-# 9. Archivando y Compresion
+# 9. Archivando y Compresión
 ## 9.1 Introducción
 En este capítulo, discutimos cómo administrar archivos de almacenamiento en la línea de comandos. El archivado de archivos se utiliza cuando uno o más archivos deben transmitirse o almacenarse de la manera más eficiente posible. Hay dos aspectos fundamentales que se exploran en este capítulo:
 	•	Archivado: Combina varios archivos en uno, lo que elimina la sobrecarga en archivos individuales y facilita la transmisión de los archivos.
