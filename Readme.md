@@ -6,4 +6,5 @@
 - ## [Ayuda](6_Ayuda.md)
 - ## [Sistema de Archivos](7_Sistema_de_archivos.md)
 - ## [Administrando Archivos y Directorios](8_Administrando_archivos_y_directorios.md)
-- ## [Archivando y Compresion](9_Archivando_y_Compresion.md)
+- ## [Archivando y Compresión](9_Archivando_y_Compresion.md)
+- ## [Trabajando con texto](10_Trabajando_con_Texto.md)
