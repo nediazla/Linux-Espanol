@@ -1,3 +1,4 @@
+# 10. Trabajando con Texto
 ## 10.1 Introducción
 Un gran número de los archivos de un sistema de archivos típico son archivos de _texto_. Los archivos de texto solo contienen texto, no las características de formato que podría ver en un archivo de procesamiento de texto.
 

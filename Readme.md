@@ -8,3 +8,6 @@
 - ## [Administrando Archivos y Directorios](8_Administrando_archivos_y_directorios.md)
 - ## [Archivando y Compresión](9_Archivando_y_Compresion.md)
 - ## [Trabajando con texto](10_Trabajando_con_Texto.md)
+- ## [Basic Scripting](11_Scripting.md)
+- ## [Comprender el Hardware de la Computadora](12_Comprender_el_hardware_de_la_computadora.md)
+- ## [Dónde se almacenan los datos]
