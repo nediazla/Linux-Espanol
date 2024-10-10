@@ -10,4 +10,6 @@
 - ## [Trabajando con texto](10_Trabajando_con_Texto.md)
 - ## [Basic Scripting](11_Scripting.md)
 - ## [Comprender el Hardware de la Computadora](12_Comprender_el_hardware_de_la_computadora.md)
-- ## [Dónde se almacenan los datos]
+- ## [Dónde se almacenan los datos](13_Donde_se_almacenan_los_datos.md)
+- ## [Configuración de Red](13_Donde_se_almacenan_los_datos.md)
+- ## [Seguridad del Sistema y del usuario](15_Seguridad_del_sistema_y_del_usuario.md)
