@@ -1,3 +1,6 @@
+
+# Linux Essentials en Español 
+
 - ## [Introducción a Linux](1_Introduccion_a_Linux.md)
 - ## [Sistemas Operativos](2_Sistema_Operativos.md)
 - ## [Trabajando con Linux](3_Trabajando_con_Linux.md)
@@ -16,3 +19,8 @@
 - ## [Creando Usuarios y Grupos](16_Creando_usuarios_y_grupos.md)
 - ## [Propiedad y permiso](17_Propiedad_y_permiso.md)
 - ## [Directorios y Archivos especiales]()
+
+
+
+Cualquier ayuda siempre es buena para seguir colaborando.  
+[![GitHub sponsors](https://undergroundwires.dev/img/badges/donate/flat.svg)](https://www.buymeacoffee.com/nediazla3)
