@@ -13,3 +13,6 @@
 - ## [Dónde se almacenan los datos](13_Donde_se_almacenan_los_datos.md)
 - ## [Configuración de Red](13_Donde_se_almacenan_los_datos.md)
 - ## [Seguridad del Sistema y del usuario](15_Seguridad_del_sistema_y_del_usuario.md)
+- ## [Creando Usuarios y Grupos](16_Creando_usuarios_y_grupos.md)
+- ## [Propiedad y permiso](17_Propiedad_y_permiso.md)
+- ## [Directorios y Archivos especiales]()
