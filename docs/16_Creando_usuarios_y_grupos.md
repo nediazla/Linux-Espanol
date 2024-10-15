@@ -150,7 +150,7 @@ Esta configuración afecta al  campo _de ID de grupo principal_ del archivo /et
 
 La opción -g del comando useradd le permite utilizar un grupo principal diferente al predeterminado al crear una nueva cuenta de usuario.
 
-- **Hogar**
+- **Home**
 
 ```
 HOME=/home
