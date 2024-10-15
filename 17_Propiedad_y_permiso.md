@@ -69,6 +69,7 @@ drwxr-xr-x 2 sysadmin sysadmin 4096 Mar 14  2016 Videos
 ![](img/20241015182021.png)
 
 - **Propietario del grupo**
+
 ![](img/20241015182037.png)
 ## 17.3 Cambio de grupos
 Si sabe que el archivo que está a punto de crear debe pertenecer a un grupo diferente del grupo principal actual, puede utilizar el  comando `newgrp` para cambiar el grupo principal actual.
