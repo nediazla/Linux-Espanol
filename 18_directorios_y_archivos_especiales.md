@@ -11,7 +11,7 @@ Cuando el  _permiso setuid_ se establece en un _archivo binario ejecutable_ (un
 
 Considere el siguiente escenario en el que el usuario sysadmin intenta ver el contenido del archivo /etc/shadow:
 
-```
+```shell
 sysadmin@localhost:~$ more /etc/shadow
 /etc/shadow: Permission denied
 sysadmin@localhost:~$ ls -l /etc/shadow
@@ -26,7 +26,7 @@ El comando passwd tiene el conjunto de  permisos _especial setuid_. Cuando se e
 
 Puede ver este conjunto de permisos ejecutando el comando ls -l:
 
-```
+```shell
 sysadmin@localhost:~$ ls -l /usr/bin/passwd
 -rwsr-xr-x 1 root root 31768 Jan 28 2010 /usr/bin/passwd
 ```
@@ -37,25 +37,25 @@ Al igual que los permisos de lectura, escritura y ejecución, los permisos espec
 
 Para agregar el permiso setuid simbólicamente, ejecute:
 
-```
+```shell
 chmod u+s file
 ```
 
 Para agregar el permiso setuid numéricamente, agregue 4000 a los permisos existentes del archivo (suponga que el archivo originalmente tenía 775 para su permiso en el ejemplo siguiente):
 
-```
+```shell
 chmod 4775 file
 ```
 
 Para quitar el permiso setuid simbólicamente, ejecute:
 
-```
+```shell
 chmod u-s file
 ```
 
 Para eliminar numéricamente el permiso setuid, reste 4000 de los permisos existentes del archivo:
 
-```
+```shell
 chmod 0775 file
 ```
 
@@ -69,7 +69,7 @@ El permiso setgid en un archivo es muy similar a setuid; permite a un usuario ej
 
 Un buen ejemplo del permiso setgid en un archivo ejecutable es el comando /usr/bin/wall. Observe los permisos para este archivo, así como para el propietario del grupo:
 
-```
+```shell
 sysadmin@localhost:~$ ls -l /usr/bin/wall
 -rwxr-sr-x 1 root tty 30800 May 16  2018 /usr/bin/wall
 ```
@@ -78,7 +78,7 @@ Puede ver que este archivo se establece por la presencia de la s en la posición
 
 Este acceso es importante porque el comando /usr/bin/wall envía mensajes a los terminales, lo que se logra escribiendo datos en archivos como los siguientes:
 
-```
+```shell
 sysadmin@localhost:~$ ls -l /dev/tty?
 crw--w----. 1 root tty  4, 0 Mar 29  2013 /dev/tty0
 crw--w----. 1 root tty  4, 1 Oct 21 19:57 /dev/tty1
@@ -92,26 +92,26 @@ Además, cualquier directorio creado dentro de un directorio con el conjunto de 
 
 De forma predeterminada, cuando el comando ls se ejecuta en un directorio, genera información sobre los archivos contenidos en el directorio. Para ver información sobre el directorio en sí, agregue la opción -d. Usado con la opción -l, se puede usar para determinar si el permiso setgid está establecido. En el ejemplo siguiente se muestra que el directorio /tmp/data tiene el conjunto de permisos setgid y que es propiedad del grupo de demostración.
 
-```
+```shell
 sysadmin@localhost:~$ ls -ld /tmp/data
 drwxrwsrwx. 2 root demo 4096 Oct 30 23:20 /tmp/data
 ```
 
 En una lista larga, el permiso setgid está representado por una s en la posición de ejecución del grupo. Una s minúscula significa que se establecen los permisos de ejecución setgid y group:
 
-```
+```shell
 drwxrwsrwx. 2 root demo 4096 Oct 30 23:20 /tmp/data
 ```
 
 Una S mayúscula significa que solo se establece el permiso setgid y no group extribute. Si ve una S mayúscula en la posición de ejecución del grupo de los permisos, indica que, aunque el permiso setgid esté establecido, no está realmente en efecto porque el grupo carece del permiso de ejecución para usarlo:
 
-```
+```shell
 drwxrwSr-x. 2 root root 5036 Oct 30 23:22 /tmp/data2
 ```
 
 Normalmente, los archivos creados por el usuario sysadmin son propiedad de su grupo principal, también llamado sysadmin.
 
-```
+```shell
 sysadmin@localhost:~$ id
 uid=500(sysadmin) gid=500(sysadmin)
 groups=500(sysadmin),10001(research),10002(development) 
@@ -122,7 +122,7 @@ context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 
 Sin embargo, si el usuario sysadmin crea un archivo en el directorio /tmp/data, el directorio setgid del ejemplo anterior, la propiedad del grupo del archivo no es el grupo sysadmin, sino el grupo que posee el directorio demo:
 
-```
+```shell
 sysadmin@localhost:~$  touch /tmp/data/file.txt
 sysadmin@localhost:~$  ls -ld /tmp/data/file.txt
 -rw-rw-r--. 1 bob demo 0 Oct 30 23:21 /tmp/data/file.txt
@@ -164,19 +164,19 @@ chmod g+s <file|directory>
 
 Para agregar el permiso setgid numéricamente, agregue 2000 a los permisos existentes del archivo (suponga en el siguiente ejemplo que el directorio originalmente tenía 775 para sus permisos):
 
-```
+```shell
 chmod 2775 <file|directory>
 ```
 
 Para eliminar simbólicamente el permiso setgid, ejecute:
 
-```
+```shell
 chmod g-s <file|directory>
 ```
 
 Para eliminar el permiso setgid numéricamente, reste 2000 de los permisos existentes del archivo:
 
-```
+```shell
 chmod 0775 <file|directory>
 ```
 
@@ -191,7 +191,7 @@ Dado que estos directorios están pensados para que todos los usuarios puedan es
 
 La salida del comando ls -l muestra el bit pegajoso con un carácter t en el bit execute del grupo de permisos others:
 
-```
+```shell
 sysadmin@localhost:~$ ls -ld /tmp                                               
 drwxrwxrwt 1 root root 4096 Mar 14  2016 /tmp    
 ```
@@ -202,32 +202,32 @@ Mientras que la S mayúscula indica un problema con los permisos setuid o setgid
 
 Para establecer simbólicamente el permiso de bit pegajoso, ejecute un comando como el siguiente:
 
-```
+```shell
 chmod o+t <directory>
 ```
 
 Para establecer el permiso de bit persistente numéricamente, agregue 1000 a los permisos existentes del directorio (suponga que el directorio del ejemplo siguiente originalmente tenía 775 para sus permisos):
 
-```
+```shell
 chmod 1775 <file|directory>
 ```
 
 Para eliminar simbólicamente el permiso permanente, ejecute:
 
-```
+```shell
 chmod o-t <directory>
 ```
 
 Para quitar numéricamente el permiso de bit pegajoso, reste 1000 de los permisos existentes del directorio:
 
-```
+```shell
 chmod 0775 <directory>
 ```
 
 ## 18.5 Enlaces
 Considere un escenario en el que hay un archivo profundamente enterrado en el sistema de archivos llamado:
 
-```
+```shell
 /usr/share/doc/superbigsoftwarepackage/data/2013/october/tenth/valuable-information.txt
 ```
 
@@ -243,7 +243,7 @@ Estos metadatos se denominan _tabla de inodos del archivo_. La tabla de inodos t
 
 Cada archivo de una partición tiene un número de identificación único llamado _número de inodo_. El comando ls -i muestra el número de inodo de un archivo.
 
-```
+```shell
 sysadmin@localhost:~$ ls -i /tmp/file.txt                                       
 215220874 /tmp/file.txt  
 ```
