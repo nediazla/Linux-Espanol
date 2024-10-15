@@ -1,6 +1,10 @@
 
 # Linux Essentials en Español 
 
+![](img/20241015192136.png)
+
+# Capítulos
+
 - ## [Introducción a Linux](1_Introduccion_a_Linux.md)
 - ## [Sistemas Operativos](2_Sistema_Operativos.md)
 - ## [Trabajando con Linux](3_Trabajando_con_Linux.md)
