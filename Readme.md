@@ -18,7 +18,7 @@
 - ## [Seguridad del Sistema y del usuario](15_Seguridad_del_sistema_y_del_usuario.md)
 - ## [Creando Usuarios y Grupos](16_Creando_usuarios_y_grupos.md)
 - ## [Propiedad y permiso](17_Propiedad_y_permiso.md)
-- ## [Directorios y Archivos especiales]()
+- ## [Directorios y Archivos especiales](18_directorios_y_archivos_especiales.md)
 
 
 
