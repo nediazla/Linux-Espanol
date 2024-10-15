@@ -26,5 +26,6 @@
 
 
 
-Cualquier ayuda siempre es buena para seguir colaborando.  
+Cualquier ayuda siempre es buena para seguir Trabajando en mas temas de interés par todos.
+
 [![GitHub sponsors](https://undergroundwires.dev/img/badges/donate/flat.svg)](https://www.buymeacoffee.com/nediazla3)
