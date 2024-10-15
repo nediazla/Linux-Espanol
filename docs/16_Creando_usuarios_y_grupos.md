@@ -1,4 +1,4 @@
-# 15. Creando Usuarios y Grupos
+# 16. Creando Usuarios y Grupos
 ## 16.1 Introducción
 Durante el proceso de instalación, la mayoría de los instaladores crean un usuario normal y le otorgan a este usuario el permiso para ejecutar comandos administrativos con sudo o requieren que se configure la contraseña de la cuenta de usuario raíz como parte del proceso de instalación. La mayoría de los sistemas Linux están configurados para permitir que un usuario sin privilegios (no root) inicie sesión, así como para tener la capacidad de ejecutar comandos de manera efectiva como usuario root, ya sea directa o indirectamente.
 
